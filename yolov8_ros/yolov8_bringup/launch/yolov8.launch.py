@@ -58,7 +58,7 @@ def generate_launch_description():
     input_image_topic = LaunchConfiguration("input_image_topic")
     input_image_topic_cmd = DeclareLaunchArgument(
         "input_image_topic",
-        default_value="namespace/color/image_raw",
+        default_value="color/image_raw",
         description="Name of the input image topic")
 
     namespace = LaunchConfiguration("namespace")

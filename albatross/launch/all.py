@@ -11,10 +11,6 @@ from launch.substitutions import PathJoinSubstitution, TextSubstitution
 
 def generate_launch_description():
     yoloconfig = IncludeLaunchDescription(
-        # PythonLaunchDescriptionSource([os.path.join(
-        # get_package_share_directory('yolov8_bringup'), 'launch'),
-        # 'yolov8.launch.py'
-        # ])
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
                 FindPackageShare('yolov8_bringup'),
@@ -27,9 +23,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='realsense2_camera',
-            namespace='namespace',
-            executable='realsense2_camera_node',
-            name='camera'
+            #namespace, unnecesary? works as expected without one 
+            executable='realsense2_camera_node', 
         ),
         yoloconfig
     ])
