@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'albatross'
+package_name = 'LeakSensor'
 
 setup(
     name=package_name,
@@ -19,8 +19,8 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
-            'test = albatross.main:main',
+        'console_scripts': [ 'talker = LeakSensor.leak_sensor:main',
+        		      'listener = LeakSensor.subscriber:main',
         ],
     },
 )

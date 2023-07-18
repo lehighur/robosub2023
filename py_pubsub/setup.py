@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'albatross'
+package_name = 'py_pubsub'
 
 setup(
     name=package_name,
@@ -20,7 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'test = albatross.main:main',
         ],
     },
 )
