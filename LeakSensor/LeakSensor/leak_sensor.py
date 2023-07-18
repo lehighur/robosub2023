@@ -16,24 +16,26 @@ class LeakSensor(Node):
     #Node Constructor
     def __init__(self):
         global leak
-        leak = GPIO.input(leak_sensor_input)
-        super().__init__('Leak_Sensor')
-        self.publisher_ = self.create_publisher(Leak, 'LeakDetection', 5)
+        #leak = GPIO.input(leak_sensor_input)
+        super().__init__('leak_sensor')
+        self.publisher_ = self.create_publisher(Leak, 'leak_sensor', 5)
         """msg = LeakSensor
         msg.data = leak"""
         #self.publisher_.publish(msg)
-        #timer_period = 0.5
-        #self.timer = self.create_timer(timer_period, self.timer_callback)
-        #self.i = 0
+        timer_period = 0.5
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
     
     def timer_callback(self):
-        msg = leak
-        msg.data = leak
+        msg = Leak()
+        msg.leak = GPIO.input(leak_sensor_input)
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
+        self.get_logger().info('Publishing: "%d"' % msg.leak)
         self.i +=1 
+        
 def main(args=None):
     rclpy.init(args=args)
+    
     leak_sensor = LeakSensor()
 
     rclpy.spin(leak_sensor)

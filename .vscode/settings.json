@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/lehighur/ros2_ws/install/yolov8_ros/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/py_pubsub/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/LeakSensor/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/albatross_interfaces/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/albatross/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/lehighur/ros2_ws/install/yolov8_ros/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/py_pubsub/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/LeakSensor/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/albatross_interfaces/lib/python3.8/site-packages",
+        "/home/lehighur/ros2_ws/install/albatross/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ]
+}
