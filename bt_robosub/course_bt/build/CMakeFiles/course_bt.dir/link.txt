@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/course_bt.dir/tasks_bt.cpp.o  -o course_bt  -Wl,-rpath,/usr/local/lib /usr/local/lib/libbehaviortree_cpp.so 

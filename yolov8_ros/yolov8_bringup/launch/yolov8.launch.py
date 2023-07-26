@@ -28,7 +28,7 @@ def generate_launch_description():
     model = LaunchConfiguration("model")
     model_cmd = DeclareLaunchArgument(
         "model",
-        default_value="/home/lehighur/yolo/train2/weights/best.pt",
+        default_value="/home/lehighur/ros2_ws/src/yolov8_ros/best.pt",
         description="Model name or path")
 
     tracker = LaunchConfiguration("tracker")
@@ -58,7 +58,7 @@ def generate_launch_description():
     input_image_topic = LaunchConfiguration("input_image_topic")
     input_image_topic_cmd = DeclareLaunchArgument(
         "input_image_topic",
-        default_value="color/image_raw",
+        default_value="/color/image_raw",
         description="Name of the input image topic")
 
     namespace = LaunchConfiguration("namespace")

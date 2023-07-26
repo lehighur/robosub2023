@@ -23,8 +23,9 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='realsense2_camera',
-            #namespace, unnecesary? works as expected without one 
+            #namespace = 'camera'
             executable='realsense2_camera_node', 
+            #name = 'camera'
         ),
         yoloconfig
     ])

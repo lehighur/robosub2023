@@ -14,5 +14,9 @@
         "/home/lehighur/ros2_ws/install/albatross_interfaces/lib/python3.8/site-packages",
         "/home/lehighur/ros2_ws/install/albatross/lib/python3.8/site-packages",
         "/opt/ros/foxy/lib/python3.8/site-packages"
-    ]
+    ],
+    "files.associations": {
+        "typeindex": "cpp",
+        "typeinfo": "cpp"
+    }
 }
