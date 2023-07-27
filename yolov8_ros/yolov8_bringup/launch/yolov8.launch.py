@@ -52,7 +52,7 @@ def generate_launch_description():
     threshold = LaunchConfiguration("threshold")
     threshold_cmd = DeclareLaunchArgument(
         "threshold",
-        default_value="0.5",
+        default_value="0.01",
         description="Minimum probability of a detection to be published")
 
     input_image_topic = LaunchConfiguration("input_image_topic")
@@ -83,6 +83,7 @@ def generate_launch_description():
         remappings=[("image_raw", input_image_topic)]
     )
 
+    
     ld = LaunchDescription()
 
     ld.add_action(model_cmd)
