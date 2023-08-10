@@ -1,0 +1,139 @@
+#USAGE: python3 clMovements2 main args
+#Example: python3 clMovements2 main down,3 fore,2 
+#         would cause the drone to go down for 3 seconds, and forwards for 2 
+#This program can be easily modified to just use function calls in a main function rather than command line arguments, however this was faster for pool testing and seeing how the drone moves. 
+import sys
+#potentially unnecesary to specify the path
+sys.path.append("/usr/bin/python")
+from time import sleep
+from pymavlink import mavutil
+
+#Only necesarry if using ROS 
+import rclpy
+from rclpy.node import Node
+from ros2topic.api import get_msg_class
+
+#Attempt at trying to keep drone at a constant depth, this does not work well, depth sensor is necessary 
+depthHoldGain = 0.66
+#How fast thrusters can spin, can go higher than 1, may lead to issues, further testing required.
+gain = 1.5 # 0-1
+#Movement vectors (values must be integers to work with pymavlink function calls)
+vectors = {
+   'fore' : [int(0+1000*gain),0,int(500-500*depthHoldGain),0,0],
+   'back' : [int(0-1000*gain),0,int(500-500*depthHoldGain),0,0],
+    'right' : [0,int(0+1000*gain),int(500-500*depthHoldGain),0,0],
+    'left' : [0,int(0-1000*gain),int(500-500*depthHoldGain),0,0],
+    'up' : [0,0,int(500+500*gain),0,0],
+    'down' : [0,0,int(500-500*gain),0,0],
+    'turnLeft' : [0,0,int(500-500*depthHoldGain),int(0+1000*gain),0],
+    'turnRight' : [0,0,int(500-500*depthHoldGain),int(-1000*gain),0],
+    'halt' :[0,0,int(500-500*depthHoldGain),0,0]
+    }
+    
+#Function to setup drone
+def setupDrone():
+    #define a global drone variable
+    global drone
+    #Connecting to Pixhawk
+    print('Heartbeating Pixhawk...')
+    #link drone variable to the Pixhawk. For reference, the pixhawk usually creates two serial (/dev/ttyACM*) devices, but it seems to respond to commands from both. 
+    #This is something to look into in the future if we continue with the pixhawk
+    drone = mavutil.mavlink_connection("/dev/ttyACM0", baud=115200)
+    #Wait for heartbeat from drone before continuing, this does not necesarrily ensure that the drone will respond to movements, usually after a reboot of the computer system
+    drone.wait_heartbeat()
+
+    #Arm drone
+    print('Arming Drone...')
+    #Structure of command can be found in the pymavlink documentation, usually they follow this format of system, component, command, confirmation, parameters. 
+    drone.mav.command_long_send(
+        drone.target_system,
+        drone.target_component,
+        mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM, 
+        0, #Confirmation
+        1, #Params (1 - 7)
+        0, 0, 0, 0, 0, 0
+    )
+
+
+#Function to move drone for a duration.
+def move(direction,duration=-1):
+    duration = float(duration)
+    print(f'Moving {direction}wards')
+    #Initiate movement by passing target system and the movement vectors
+    drone.mav.manual_control_send(drone.target_system,*vectors[direction])
+    i = 0
+    #while loop to continue drone movement for the specified duration, as manual control times out after around 3 seconds
+    while (-i + duration) > 1:
+        sleep(1)
+        i+=1
+        print(i)
+        drone.mav.manual_control_send(drone.target_system, vectors[direction][0], vectors[direction][1], vectors[direction][2], vectors[direction][3], vectors[direction][4])
+    sleep(duration - i)    
+   # drone.mav.manual_control_send(drone.target_system, vectors['halt'][0], vectors['halt'][1], vectors['halt'][2], vectors['halt'][3], vectors['halt'][4])
+    drone.mav.manual_control_send(drone.target_system, 0, 0, 500, 0, 0)
+    #change flight mode to stabilize to try and stop drone from drifting, does not work as well as we would like, further testing is required 
+    changeFlightMode('STABILIZE')
+    sleep(0.25)
+    #halt drone
+    drone.mav.manual_control_send(drone.target_system, 0, 0, 500, 0, 0)
+    #change mode back to manual for the next movement command
+    changeFlightMode('MANUAL')
+    print(f'Done moving {direction}wards')
+
+#Function to change flight mode of drone
+def changeFlightMode(mode): #STABILIZE , DEPTHHOLD , MANUAL , ACRO etc
+    print(f'Changing flight mode to {mode}')
+    mode_id = drone.mode_mapping()[mode]
+    drone.mav.command_long_send(
+        drone.target_system, # Target system ID
+        drone.target_component, # Target component ID
+        mavutil.mavlink.MAV_CMD_DO_SET_MODE, # ID of command to send
+        0,  # Confirmation
+        0, 
+        mode_id, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0)
+
+#Main
+def main(*ddPair):
+    #create rudimentry log file 
+    file = open("testingRuns.txt", "w")
+    file.write("Pre Operation\n")
+    #delay to move drone prior to code execution, can be adjusted to whatever 
+    sleep(60)
+    try:
+        #two setup calls to try and fix the issue where the pixhawk does not respond to the first file ran after reboot, did not completely remove the issue
+        setupDrone()
+        setupDrone()
+        #change to manual
+        changeFlightMode('MANUAL')
+        file.write("In try block\n")
+        #run through command line arguments and parse them. 
+        for item in sys.argv[2::]:
+            file.write(item + "\n")
+            item = item.split(',')
+            item[1] = float(item[1])
+            move(*item)
+            changeFlightMode('MANUAL')
+    #stop program on keyboard interrupt, disarm the pixhawk
+    except KeyboardInterrupt:
+        changeFlightMode('MANUAL')
+        drone.mav.command_long_send(
+            drone.target_system,
+            drone.target_component,
+            mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM, 
+            0, #Confirmation
+            0, #Params (1 - 7)
+            0, 0, 0, 0, 0, 0
+        )
+        exit()
+    changeFlightMode('MANUAL')
+    file.write("End of Run\n")
+    file.close()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,12 @@
+[Unit]
+Description=Service to run script on startup #description of service
+After=network.target #runs after network service, which is towards the end of the boot sequence
+
+[Service]
+WorkingDirectory=/home/lehighur/SemiCode/ #directory that the script is located, probably unnecesarry especially if it is specified in the script
+User=lehighur #run as user rather than root
+ExecStart=/home/lehighur/script.sh #path to script that you want to run
+Environment="PYTHONPATH=$PYTHONPATH:/usr/bin/python" #specify python environment, which might also be unnecesarry if just using the default python path
+
+[Install]
+WantedBy=multi-user.target #run at startup before a gui starts up 

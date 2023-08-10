@@ -1,0 +1,5 @@
+In order to run a program on startup we utilized Linuxs' systemd services. Specifically, the goal was to write a service (services are located in /etc/systemd/system/) that runs during startup, 
+and calls a bash script to run our python program. That service is included (ScriptService.service), as is the script that it executed, these could likely be cleaned up in the future, 
+and it is my understanding that trying to use ROS on startup could create some problems that we side-stepped by only using a python file. 
+
+
