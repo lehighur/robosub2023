@@ -1,0 +1,37 @@
+[2.434s] Invoking command in '/home/lehighur/ros2_ws/src/object_detection': AMENT_PREFIX_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs LD_LIBRARY_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/lehighur/ros2_ws/src/build/object_detection/prefix_override:/home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages:/home/lehighur/ros2_ws/src/install/vision_msgs/lib/python3.8/site-packages:${PYTHONPATH} _tide_pad= /usr/bin/python3 setup.py egg_info --egg-base ../build/object_detection build --build-base /home/lehighur/ros2_ws/src/build/object_detection/build install --record /home/lehighur/ros2_ws/src/build/object_detection/install.log --install-scripts $base/lib/object_detection --single-version-externally-managed
+[2.992s] running egg_info
+[2.993s] creating ../build/object_detection/object_detection.egg-info
+[2.994s] writing ../build/object_detection/object_detection.egg-info/PKG-INFO
+[2.995s] writing dependency_links to ../build/object_detection/object_detection.egg-info/dependency_links.txt
+[2.995s] writing entry points to ../build/object_detection/object_detection.egg-info/entry_points.txt
+[2.995s] writing requirements to ../build/object_detection/object_detection.egg-info/requires.txt
+[2.996s] writing top-level names to ../build/object_detection/object_detection.egg-info/top_level.txt
+[3.013s] writing manifest file '../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[3.090s] reading manifest file '../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[3.092s] writing manifest file '../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[3.092s] running build
+[3.093s] running build_py
+[3.094s] creating /home/lehighur/ros2_ws/src/build/object_detection/build
+[3.095s] creating /home/lehighur/ros2_ws/src/build/object_detection/build/lib
+[3.095s] creating /home/lehighur/ros2_ws/src/build/object_detection/build/lib/object_detection
+[3.095s] copying object_detection/subscriber_member_function.py -> /home/lehighur/ros2_ws/src/build/object_detection/build/lib/object_detection
+[3.095s] copying object_detection/__init__.py -> /home/lehighur/ros2_ws/src/build/object_detection/build/lib/object_detection
+[3.096s] running install
+[3.096s] running install_lib
+[3.099s] creating /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection
+[3.099s] copying /home/lehighur/ros2_ws/src/build/object_detection/build/lib/object_detection/subscriber_member_function.py -> /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection
+[3.100s] copying /home/lehighur/ros2_ws/src/build/object_detection/build/lib/object_detection/__init__.py -> /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection
+[3.101s] byte-compiling /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection/subscriber_member_function.py to subscriber_member_function.cpython-38.pyc
+[3.106s] byte-compiling /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection/__init__.py to __init__.cpython-38.pyc
+[3.106s] running install_data
+[3.108s] creating /home/lehighur/ros2_ws/src/install/object_detection/share/ament_index
+[3.108s] creating /home/lehighur/ros2_ws/src/install/object_detection/share/ament_index/resource_index
+[3.108s] creating /home/lehighur/ros2_ws/src/install/object_detection/share/ament_index/resource_index/packages
+[3.109s] copying resource/object_detection -> /home/lehighur/ros2_ws/src/install/object_detection/share/ament_index/resource_index/packages
+[3.109s] copying package.xml -> /home/lehighur/ros2_ws/src/install/object_detection/share/object_detection
+[3.109s] running install_egg_info
+[3.113s] Copying ../build/object_detection/object_detection.egg-info to /home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages/object_detection-0.0.0-py3.8.egg-info
+[3.116s] running install_scripts
+[3.166s] Installing object_detection_sub script to /home/lehighur/ros2_ws/src/install/object_detection/lib/object_detection
+[3.167s] writing list of installed files to '/home/lehighur/ros2_ws/src/build/object_detection/install.log'
+[3.297s] Invoked command in '/home/lehighur/ros2_ws/src/object_detection' returned '0': AMENT_PREFIX_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs LD_LIBRARY_PATH=/home/lehighur/ros2_ws/src/install/vision_msgs/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/lehighur/ros2_ws/src/build/object_detection/prefix_override:/home/lehighur/ros2_ws/src/install/object_detection/lib/python3.8/site-packages:/home/lehighur/ros2_ws/src/install/vision_msgs/lib/python3.8/site-packages:${PYTHONPATH} _tide_pad= /usr/bin/python3 setup.py egg_info --egg-base ../build/object_detection build --build-base /home/lehighur/ros2_ws/src/build/object_detection/build install --record /home/lehighur/ros2_ws/src/build/object_detection/install.log --install-scripts $base/lib/object_detection --single-version-externally-managed

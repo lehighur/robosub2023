@@ -1,0 +1,3 @@
+[console_scripts]
+object_detection_sub = object_detection.subscriber_member_function:main
+
