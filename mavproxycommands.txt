@@ -1,0 +1,9 @@
+Run these commands to connect the Jetson to Local Machine (to be able to use 
+
+Run on Jetson while SSHed:
+mavproxy.py --master=/dev/ttyACM0,115200 --mav20 --streamrate 10 --cmd="set heartbeat 0" --out udpin:localhost:9000 --out udpin:0.0.0.0:14660 --out udpbcast:192.168.2.255:14550
+
+Run on Local Machine in another window, replace jetson_ip with jetson IP address:
+mavproxy.py --master=udpout:jetson_ip:14660 --out 127.0.0.1:14550
+
+
