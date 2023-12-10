@@ -56,20 +56,28 @@ Make sure the following requirements are downloaded and satisfied:
 
 To launch the intelrealsense node navigate to the directory where you stored it and run:
 
-$ ros2 run realsense2_camera realsense2_camera_node
+```
+~$ ros2 run realsense2_camera realsense2_camera_node
+```
 
 ### Launching the ROS2 YOLOv8 node
 
 Open up another terminal and navigate back to your workspace where the source code is store and run:
 
-$ source ./install/setup.bash
-$ colcon build ./run
-$ ros2 launch ./src/yolov8_ros/yolov8_bringup/launch/yolov8.launch.py
+```
+~/ros2_ws$ source ./install/setup.bash
+~/ros2_ws$ colcon build ./run
+~/ros2_ws$ ros2 launch ./src/yolov8_ros/yolov8_bringup/launch/yolov8.launch.py
+```
 
 ### Launching the object detection processing node
 
+Open up another terminal and navigate to the src folder of the workspace and run:
 
-
+```
+~/ros2_ws/src$ source ./install/setup.bash
+~/ros2_ws/src$ ros2 run object_detection object_detection_sub
+```
 
 ### Visual testing
 
