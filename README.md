@@ -18,7 +18,7 @@ The source code and documentation for the Lehihg Underwater Robotics Team
 - Mavlink Documentation: https://ardupilot.org/dev/docs/mavlink-basics.html
 - ArduSub: https://www.ardusub.com/
 - ROS2 Foxy: https://docs.ros.org/en/foxy/
-- YOLOv8 package for ROS2: https://github.com/mgonzs13/yol0v8_ros
+- YOLOv8 package for ROS2: [https://github.com/mgonzs13/yol0v8_ros](https://github.com/mgonzs13/yolov8_ros)
 - Roboflow with YOLOv8: https://roboflow.com/model/yolov8
 - Behavioral Tree Documentation: https://www.behavioraltree.dev/docs/intro/
 
