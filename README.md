@@ -38,18 +38,18 @@ Cloning tutorial: https://docs.github.com/en/repositories/creating-and-managing-
 
 Make sure the following requirements are downloaded and satisfied:
 
-  - Opearting System: Ubuntu 20.04.6 LTS
-  - ROS2 Foxy
-      - Installation: https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
-  - Intelrealsense ROS2 package
-    - Installation: https://github.com/IntelRealSense/realsense-ros    
+- Opearting System: Ubuntu 20.04.6 LTS
+- ROS2 Foxy
+  - Installation: https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
+- Intelrealsense ROS2 package
+  - Installation: https://github.com/IntelRealSense/realsense-ros    
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Step 1: Setup environment
 
-Say what the step will be
-
+  - Create a ROS2 workspace: https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html
+  
 ```
 Give the example
 ```
