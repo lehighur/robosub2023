@@ -28,7 +28,11 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To get a copy of the source code on your computer clone the repository.
+Clone the repository to get a copy of the project
+
+Cloning tutorial: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+
 
 
 ### Prerequisites
