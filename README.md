@@ -24,12 +24,16 @@ The source code and documentation for the Lehihg Underwater Robotics Team
 
 # ROS2 Source Code
 
-One Paragraph of project description goes here
+The ROS2 code that has object detection and processing for RoboSub2023 task images.
 
 ## Getting Started
 
-Clone the repository to get a copy of the project
+Setup environment
 
+1. Create a ROS2 workspace: https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html
+2. Navigate to that workspace
+3. Clone the repository to the src folder of the workspace
+   
 Cloning tutorial: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 
@@ -44,42 +48,32 @@ Make sure the following requirements are downloaded and satisfied:
 - Intelrealsense ROS2 package
   - Installation: https://github.com/IntelRealSense/realsense-ros    
 
-### Installing
 
-Step 1: Setup environment
-
-  - Create a ROS2 workspace: https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html
-  
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the code
 
-```
-until finished
-```
+### Launching the intel real sense node
 
-### Break down into end to end tests
+To launch the intelrealsense node navigate to the directory where you stored it and run:
 
-Explain what these tests test and why
+$ ros2 run realsense2_camera realsense2_camera_node
 
-```
-Give an example
-```
+### Launching the ROS2 YOLOv8 node
 
-### And coding style tests
+Open up another terminal and navigate back to your workspace where the source code is store and run:
 
-Explain what these tests test and why
+$ source ./install/setup.bash
+$ colcon build ./run
+$ ros2 launch ./src/yolov8_ros/yolov8_bringup/launch/yolov8.launch.py
 
-```
-Give an example
-```
+### Launching the object detection processing node
+
+
+
+
+### Visual testing
+
+To view the bounding boxes of the object detection run "$ rviz2" and select yolov8/detections topic.
+
+To view a visual representation off the nodes' communication run "$ rqt_grap" while in the root of the ROS2 workspace.
+
