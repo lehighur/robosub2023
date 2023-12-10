@@ -41,6 +41,8 @@ Make sure the following requirements are downloaded and satisfied:
   - Opearting System: Ubuntu 20.04.6 LTS
   - ROS2 Foxy
       - Installation: https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
+  - Intelrealsense ROS2 package
+    - Installation: https://github.com/IntelRealSense/realsense-ros    
 
 ### Installing
 
