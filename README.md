@@ -28,7 +28,6 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-To get a copy of the source code on your computer clone the repository.
 Clone the repository to get a copy of the project
 
 Cloning tutorial: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
@@ -61,9 +60,11 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Running the code
 
-Explain how to run the automated tests for this system
+```
+until finished
+```
 
 ### Break down into end to end tests
 
