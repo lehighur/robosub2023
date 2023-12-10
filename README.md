@@ -14,7 +14,7 @@ The source code and documentation for the Lehihg Underwater Robotics Team
   - Training with YOLOv8
    
 ### Other Useful Links
-- Pixhawk4 Autopilot User Guide: https://docs.px4.io/
+- Pixhawk4 Autopilot User Guide: [https://docs.px4.io/](https://docs.px4.io/main/en/)
 - Mavlink Documentation: https://ardupilot.org/dev/docs/mavlink-basics.html
 - ArduSub: https://www.ardusub.com/
 - ROS2 Foxy: https://docs.ros.org/en/foxy/
