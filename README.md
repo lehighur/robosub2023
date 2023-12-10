@@ -3,18 +3,26 @@
 The source code and documentation for the Lehihg Underwater Robotics Team
 
 ### Google Drive
-  - Includes: Past years files, accound credentials, presentations, etc.
-  - Email inuwrobo@lehigh.edu to request for access
+- Includes: Past years files, accound credentials, presentations, etc.
+- Email inuwrobo@lehigh.edu to request for access
 
 ### Team Wiki: https://docs.lehighur.org
-  - Includes Tutorials:
-    - Mavproxy Setup on Jetson
-    - YOLOv8 Setup on Jetson Orin
-    - Using FFmpeg to Record Camera
-    - Training with YOLOv8
+- Includes Tutorials:
+  - Mavproxy Setup on Jetson
+  - YOLOv8 Setup on Jetson Orin
+  - Using FFmpeg to Record Camera
+  - Training with YOLOv8
    
+### Other Useful Links
+- Pixhawk4 Autopilot User Guide: https://docs.px4.io/
+- Mavlink Documentation: https://ardupilot.org/dev/docs/mavlink-basics.html
+- ArduSub: https://www.ardusub.com/
+- ROS2 Foxy: https://docs.ros.org/en/foxy/
+- YOLOv8 package for ROS2: https://github.com/mgonzs13/yol0v8_ros
+- Roboflow with YOLOv8: https://roboflow.com/model/yolov8
+- Behavioral Tree Documentation: https://www.behavioraltree.dev/docs/intro/
 
-# Project Title
+# ROS2 Source Code
 
 One Paragraph of project description goes here
 
